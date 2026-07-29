@@ -62,3 +62,55 @@ function completeTraining() {
         sessions + " Sessions Completed 🎀";
 
 }
+// 📅 Weekly Planner Saving
+
+let plannerInputs = document.querySelectorAll(".planner-card input");
+
+
+plannerInputs.forEach((input, index) => {
+
+    // Load saved plans
+    let savedPlan = localStorage.getItem("planner-" + index);
+
+    if (savedPlan) {
+        input.value = savedPlan;
+    }
+
+
+    // Save when typing
+    input.addEventListener("input", function() {
+
+        localStorage.setItem(
+            "planner-" + index,
+            input.value
+        );
+
+    });
+
+});
+
+
+// Save weekly goal
+
+let goalInput = document.querySelector(".goal-box input");
+
+
+if (goalInput) {
+
+    let savedGoal = localStorage.getItem("weeklyGoal");
+
+    if (savedGoal) {
+        goalInput.value = savedGoal;
+    }
+
+
+    goalInput.addEventListener("input", function() {
+
+        localStorage.setItem(
+            "weeklyGoal",
+            goalInput.value
+        );
+
+    });
+
+}
