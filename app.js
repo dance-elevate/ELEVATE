@@ -114,3 +114,17 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 
 });
+// 🩰 Workout Library
+
+function startWorkout(workoutName) {
+
+    alert(
+        "Starting " + workoutName + " 🎀"
+    );
+
+    localStorage.setItem(
+        "currentWorkout",
+        workoutName
+    );
+
+}
