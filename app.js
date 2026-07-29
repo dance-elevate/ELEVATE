@@ -10,3 +10,8 @@ if (startBtn) {
     }, 300);
   });
 }
+function startTraining(trainingName) {
+    alert("Starting: " + trainingName + " 🎀");
+
+    localStorage.setItem("currentTraining", trainingName);
+}
