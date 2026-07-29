@@ -1,15 +1,10 @@
-const startBtn = document.getElementById("startBtn");
+// ELEVATE Welcome Message
+window.onload = function() {
+    alert("Welcome to ELEVATE 🎀\n\nThis is Version 1!\nMore features coming soon ✨");
+};
 
-if (startBtn) {
-  startBtn.addEventListener("click", () => {
-    startBtn.textContent = "Let's Dance! 🩰";
-    startBtn.style.backgroundColor = "#d98aa5";
 
-    setTimeout(() => {
-      alert("🎀 Welcome to ELEVATE!\n\nThis is Version 1.0 of your dance training website. More features are coming soon!");
-    }, 300);
-  });
-}
+// Training Buttons
 function startTraining(trainingName) {
     alert("Starting: " + trainingName + " 🎀");
 
