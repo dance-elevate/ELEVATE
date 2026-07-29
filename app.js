@@ -43,3 +43,22 @@ function clearTraining() {
     localStorage.removeItem("currentTraining");
 
 }
+// 📈 Progress Tracker
+
+let sessions = localStorage.getItem("sessions");
+
+if (sessions === null) {
+    sessions = 0;
+}
+
+
+function completeTraining() {
+
+    sessions++;
+
+    localStorage.setItem("sessions", sessions);
+
+    document.getElementById("trainingCount").innerHTML =
+        sessions + " Sessions Completed 🎀";
+
+}
