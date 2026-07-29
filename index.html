@@ -1,70 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ELEVATE</title>
 
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>ELEVATE | Home</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<header>
-  <div class="logo">🎀 ELEVATE</div>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Training</a>
-    <a href="#">Videos</a>
-    <a href="#">Planner</a>
-    <a href="#">About</a>
-  </nav>
+<header>
+
+<div class="logo">
+🎀 ELEVATE
+</div>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="training.html">Training</a>
+<a href="workouts.html">Workouts</a>
+<a href="progress.html">Progress</a>
+<a href="planner.html">Planner</a>
+<a href="achievements.html">Awards</a>
+
+</nav>
+
 </header>
+
+
+
+
+<main>
+
 
 <section class="hero">
 
-<h1>Rise. Train. ELEVATE.</h1>
+<h1>
+Welcome to ELEVATE 🎀
+</h1>
 
 <p>
-Helping dancers become stronger, more flexible,
-more confident, and competition ready.
+Train with confidence. Grow with purpose.
 </p>
 
-<button id="startBtn">
-Start Training
+</section>
+
+
+
+
+
+<section class="progress-grid">
+
+
+<div class="progress-card">
+
+<h2>
+🩰 Quick Start
+</h2>
+
+<p>
+Ready to train?
+</p>
+
+<button onclick="goToWorkout()">
+Start Workout
 </button>
 
+</div>
+
+
+
+
+
+<div class="progress-card">
+
+<h2>
+📈 Your Progress
+</h2>
+
+<p id="homeProgress">
+0 Sessions Completed
+</p>
+
+<a href="progress.html">
+<button>
+View Progress
+</button>
+</a>
+
+</div>
+
+
+
+
+
+<div class="progress-card">
+
+<h2>
+📅 Weekly Plan
+</h2>
+
+<p>
+Stay organized and consistent.
+</p>
+
+<a href="planner.html">
+<button>
+Open Planner
+</button>
+</a>
+
+</div>
+
+
+
+
+
+<div class="progress-card">
+
+<h2>
+🏆 Achievements
+</h2>
+
+<p>
+Celebrate your wins.
+</p>
+
+<a href="achievements.html">
+<button>
+View Awards
+</button>
+</a>
+
+</div>
+
+
+
 </section>
 
-<section class="cards">
 
-<div class="card">
-<h2>🩰 Ballet</h2>
-<p>Elegant technique lessons.</p>
-</div>
 
-<div class="card">
-<h2>🤸 Stretch</h2>
-<p>Daily flexibility routines.</p>
-</div>
 
-<div class="card">
-<h2>💪 Strength</h2>
-<p>Workouts designed for dancers.</p>
-</div>
+
+<section class="goal-box">
+
+<h2>
+✨ Today's Reminder
+</h2>
+
+<p>
+Small steps create big results.
+</p>
 
 </section>
+
+
+
+</main>
+
+
+
 
 <footer>
 
-<p>© 2026 ELEVATE</p>
+<p>
+🎀 ELEVATE • Keep growing
+</p>
 
 </footer>
 
+
+
 <script src="app.js"></script>
 
+
 </body>
+
 </html>
