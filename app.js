@@ -2,51 +2,41 @@
 
 
 // Welcome Message
-window.onload = function() {
 
-    if (!localStorage.getItem("visited")) {
+if (!localStorage.getItem("visited")) {
 
-        alert(
-            "Welcome to ELEVATE 🎀\n\n" +
-            "This is Version 1!\n" +
-            "More features coming soon ✨"
-        );
+    alert(
+        "Welcome to ELEVATE 🎀\n\n" +
+        "This is Version 1!\n" +
+        "More features coming soon ✨"
+    );
 
-        localStorage.setItem("visited", "true");
-    }
+    localStorage.setItem("visited", "true");
 
-};
+}
 
 
 
-// 🩰 Training Selection
+// 🩰 Training
 
-function startTraining(trainingName) {
+function startTraining(trainingName){
 
     localStorage.setItem(
         "currentTraining",
         trainingName
     );
 
-    alert(
-        "Starting: " + trainingName + " 🎀"
-    );
-
 }
 
 
 
 
-// 📈 Progress Tracker
+// 📈 Progress
 
-let sessions = localStorage.getItem("sessions");
-
-if (sessions === null) {
-    sessions = 0;
-}
+let sessions = Number(localStorage.getItem("sessions")) || 0;
 
 
-function completeTraining() {
+function completeTraining(){
 
     sessions++;
 
@@ -56,11 +46,15 @@ function completeTraining() {
     );
 
 
-    let counter = document.getElementById("trainingCount");
+    let count =
+    document.getElementById("trainingCount");
 
-    if(counter){
-        counter.innerHTML =
+
+    if(count){
+
+        count.innerHTML =
         sessions + " Sessions Completed 🎀";
+
     }
 
 }
@@ -68,67 +62,41 @@ function completeTraining() {
 
 
 
+
 // 📅 Planner Saving
 
-window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("DOMContentLoaded", function(){
 
 
-    let plannerInputs =
-    document.querySelectorAll(".planner-card input");
+let inputs =
+document.querySelectorAll(".planner-card input");
 
 
-    plannerInputs.forEach(function(input,index){
+inputs.forEach(function(input,index){
 
 
-        let saved =
-        localStorage.getItem("planner-" + index);
+let saved =
+localStorage.getItem("planner-" + index);
 
 
-        if(saved){
-            input.value = saved;
-        }
+if(saved){
 
+input.value = saved;
 
-        input.addEventListener("input",function(){
-
-            localStorage.setItem(
-                "planner-" + index,
-                input.value
-            );
-
-        });
-
-
-    });
+}
 
 
 
-    let goalInput =
-    document.querySelector(".goal-box input");
+input.addEventListener("input",function(){
 
 
-    if(goalInput){
+localStorage.setItem(
+"planner-" + index,
+input.value
+);
 
 
-        let savedGoal =
-        localStorage.getItem("weeklyGoal");
-
-
-        if(savedGoal){
-            goalInput.value = savedGoal;
-        }
-
-
-        goalInput.addEventListener("input",function(){
-
-            localStorage.setItem(
-                "weeklyGoal",
-                goalInput.value
-            );
-
-        });
-
-    }
+});
 
 
 });
@@ -137,19 +105,63 @@ window.addEventListener("DOMContentLoaded", function() {
 
 
 
-// 💪 Workout Library
+let goal =
+document.querySelector(".goal-box input");
+
+
+if(goal){
+
+
+let savedGoal =
+localStorage.getItem("weeklyGoal");
+
+
+if(savedGoal){
+
+goal.value = savedGoal;
+
+}
+
+
+
+goal.addEventListener("input",function(){
+
+
+localStorage.setItem(
+"weeklyGoal",
+goal.value
+);
+
+
+});
+
+
+}
+
+
+
+});
+
+
+
+
+
+
+
+// 💪 Workout Selection
 
 function startWorkout(workoutName){
 
 
-    localStorage.setItem(
-        "currentWorkout",
-        workoutName
-    );
+localStorage.setItem(
+"currentWorkout",
+workoutName
+);
 
 
-    window.location.href =
-    "workout.html";
+window.location.href =
+"workout.html";
+
 
 }
 
@@ -158,7 +170,7 @@ function startWorkout(workoutName){
 
 
 
-// 🩰 Individual Workout Page
+// 🩰 Load Workout
 
 
 window.addEventListener("DOMContentLoaded", function(){
@@ -168,87 +180,123 @@ let workout =
 localStorage.getItem("currentWorkout");
 
 
+
 let title =
 document.getElementById("workoutTitle");
+
 
 
 if(workout && title){
 
 
-    title.innerHTML = workout;
+
+title.innerHTML =
+workout;
 
 
 
-    let exercises = {
-
-
-        "Ballet Warm-Up":[
-            "Posture and balance practice",
-            "Pliés and controlled movement",
-            "Stretch and mobility work"
-        ],
-
-
-        "Flexibility Flow":[
-            "Hamstring stretches",
-            "Hip mobility",
-            "Full body stretching"
-        ],
-
-
-        "Strength Training":[
-            "Core stability",
-            "Balance exercises",
-            "Leg strength"
-        ],
-
-
-        "Rider Training":[
-            "Core control",
-            "Balance practice",
-            "Rider stability"
-        ],
-
-
-        "Show Prep":[
-            "Presentation practice",
-            "Goal visualization",
-            "Confidence training"
-        ],
-
-
-        "Recovery":[
-            "Gentle stretching",
-            "Mobility work",
-            "Relaxation"
-        ]
-
-
-    };
+let workouts = {
 
 
 
-    let selected =
-    exercises[workout];
+"Ballet Warm-Up":[
+
+"5 minutes posture and balance work",
+
+"Practice pliés and controlled movement",
+
+"Stretch for flexibility and mobility"
+
+],
 
 
 
-    if(selected){
+"Flexibility Flow":[
+
+"Hamstring stretching",
+
+"Hip mobility exercises",
+
+"Full body flexibility routine"
+
+],
 
 
-        document.getElementById("exerciseOne").innerHTML =
-        selected[0];
+
+"Strength Training":[
+
+"Core stability exercises",
+
+"Balance training",
+
+"Leg strength exercises"
+
+],
 
 
-        document.getElementById("exerciseTwo").innerHTML =
-        selected[1];
+
+"Rider Training":[
+
+"Core control",
+
+"Balance exercises",
+
+"Rider stability work"
+
+],
 
 
-        document.getElementById("exerciseThree").innerHTML =
-        selected[2];
+
+"Show Prep":[
+
+"Practice presentation",
+
+"Visualize your goals",
+
+"Build confidence"
+
+],
 
 
-    }
+
+"Recovery":[
+
+"Gentle stretching",
+
+"Mobility exercises",
+
+"Relaxation routine"
+
+]
+
+
+};
+
+
+
+
+let selected =
+workouts[workout];
+
+
+
+if(selected){
+
+
+document.getElementById("exerciseOne").innerHTML =
+selected[0];
+
+
+document.getElementById("exerciseTwo").innerHTML =
+selected[1];
+
+
+document.getElementById("exerciseThree").innerHTML =
+selected[2];
+
+
+}
+
 
 
 }
@@ -259,10 +307,16 @@ if(workout && title){
 
 
 
-function completeExercise(){
 
-    alert(
-        "Exercise completed! 🎀"
-    );
+
+
+
+function finishWorkout(){
+
+
+alert(
+"Workout Complete! 🎀🏆"
+);
+
 
 }
