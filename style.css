@@ -1,106 +1,167 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+/* 🎀 ELEVATE Main Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Georgia", serif;
 }
 
-body{
-background:#FFF9FC;
-color:#444;
+
+body {
+    background: #fff5f8;
+    color: #5a3d4f;
 }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:white;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-position:sticky;
-top:0;
+
+/* Header */
+
+header {
+    background: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e8c27d;
 }
 
-.logo{
-font-size:28px;
-font-weight:700;
-color:#D98AA5;
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d48aa0;
 }
 
-nav a{
-text-decoration:none;
-margin-left:25px;
-color:#555;
-font-weight:600;
-transition:.3s;
+
+nav a {
+    text-decoration: none;
+    color: #8c6072;
+    margin-left: 20px;
+    font-size: 16px;
 }
 
-nav a:hover{
-color:#D98AA5;
+
+nav a:hover {
+    color: #c89b3c;
 }
 
-.hero{
-height:85vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-background:linear-gradient(180deg,#FFF,#FFE9F3);
+
+
+/* Hero Section */
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
 }
 
-.hero h1{
-font-size:64px;
-color:#D98AA5;
-margin-bottom:20px;
+
+.hero h1 {
+    font-size: 45px;
+    color: #c9899e;
+    margin-bottom: 15px;
 }
 
-.hero p{
-font-size:20px;
-max-width:650px;
-line-height:1.7;
-margin-bottom:40px;
+
+.hero p {
+    font-size: 18px;
 }
 
-button{
-padding:16px 42px;
-border:none;
-border-radius:50px;
-background:#D4AF37;
-color:white;
-font-size:18px;
-cursor:pointer;
-transition:.3s;
+
+
+/* Cards */
+
+.training-grid,
+.progress-grid,
+.planner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 30px;
 }
 
-button:hover{
-transform:scale(1.05);
+
+
+.training-card,
+.progress-card,
+.planner-card,
+.goal-box {
+
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+
+    border: 2px solid #f0d6df;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-padding:80px 8%;
+
+
+h2 {
+    color: #c9899e;
+    margin-bottom: 15px;
 }
 
-.card{
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-text-align:center;
-transition:.3s;
+
+
+/* Buttons */
+
+button {
+
+    background: #d9b35a;
+    color: white;
+
+    border: none;
+    border-radius: 30px;
+
+    padding: 12px 25px;
+
+    margin-top: 15px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
 }
 
-.card:hover{
-transform:translateY(-10px);
+
+button:hover {
+
+    background: #c89b3c;
+
 }
 
-footer{
-padding:30px;
-text-align:center;
-background:white;
-margin-top:50px;
+
+
+/* Planner Inputs */
+
+input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 15px;
+
+    border-radius: 15px;
+
+    border: 1px solid #e8c27d;
+
+    font-size: 15px;
+
+}
+
+
+
+/* Footer */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #8c6072;
+
 }
