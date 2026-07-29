@@ -1,1 +1,106 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
+body{
+background:#FFF9FC;
+color:#444;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#D98AA5;
+}
+
+nav a{
+text-decoration:none;
+margin-left:25px;
+color:#555;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#D98AA5;
+}
+
+.hero{
+height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(180deg,#FFF,#FFE9F3);
+}
+
+.hero h1{
+font-size:64px;
+color:#D98AA5;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+max-width:650px;
+line-height:1.7;
+margin-bottom:40px;
+}
+
+button{
+padding:16px 42px;
+border:none;
+border-radius:50px;
+background:#D4AF37;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:80px 8%;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+text-align:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:white;
+margin-top:50px;
+}
