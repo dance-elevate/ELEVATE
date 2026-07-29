@@ -81,3 +81,42 @@ badge.innerHTML =
 
 
 });
+// 🏠 Home Dashboard
+
+
+function goToWorkout(){
+
+localStorage.setItem(
+"currentWorkout",
+"Ballet Warm-Up"
+);
+
+
+window.location.href =
+"workout.html";
+
+}
+
+
+
+
+window.addEventListener("DOMContentLoaded", function(){
+
+
+let homeProgress =
+document.getElementById("homeProgress");
+
+
+let sessions =
+localStorage.getItem("sessions") || 0;
+
+
+if(homeProgress){
+
+homeProgress.innerHTML =
+sessions + " Sessions Completed 🎀";
+
+}
+
+
+});
