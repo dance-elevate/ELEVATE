@@ -128,3 +128,85 @@ function startWorkout(workoutName) {
     );
 
 }
+// 🩰 Workout Details
+
+
+let workout = localStorage.getItem("currentWorkout");
+
+
+if (workout && document.getElementById("workoutTitle")) {
+
+
+document.getElementById("workoutTitle").innerHTML = workout;
+
+
+let exercises = {
+
+
+"Ballet Warm-Up": [
+"5 minutes of posture and balance work",
+"Practice pliés and controlled movements",
+"Stretch and improve flexibility"
+],
+
+
+"Flexibility Flow": [
+"Hamstring stretches",
+"Hip mobility exercises",
+"Full body stretching routine"
+],
+
+
+"Strength Training": [
+"Core stability exercises",
+"Balance training",
+"Leg strength exercises"
+],
+
+
+"Rider Training": [
+"Core control exercises",
+"Balance practice",
+"Lower body stability"
+],
+
+
+"Show Prep": [
+"Practice confidence and presentation",
+"Review performance goals",
+"Visualization practice"
+],
+
+
+"Recovery": [
+"Gentle stretching",
+"Mobility exercises",
+"Relaxation breathing"
+]
+
+
+};
+
+
+let selected = exercises[workout];
+
+
+if(selected){
+
+document.getElementById("exerciseOne").innerHTML = selected[0];
+
+document.getElementById("exerciseTwo").innerHTML = selected[1];
+
+document.getElementById("exerciseThree").innerHTML = selected[2];
+
+}
+
+}
+
+
+
+function completeExercise(){
+
+alert("Exercise completed! 🎀");
+
+}
