@@ -64,53 +64,53 @@ function completeTraining() {
 }
 // 📅 Weekly Planner Saving
 
-let plannerInputs = document.querySelectorAll(".planner-card input");
+window.addEventListener("DOMContentLoaded", function() {
+
+    let plannerInputs = document.querySelectorAll(".planner-card input");
 
 
-plannerInputs.forEach((input, index) => {
+    plannerInputs.forEach((input, index) => {
 
-    // Load saved plans
-    let savedPlan = localStorage.getItem("planner-" + index);
+        let savedPlan = localStorage.getItem("planner-" + index);
 
-    if (savedPlan) {
-        input.value = savedPlan;
-    }
+        if (savedPlan) {
+            input.value = savedPlan;
+        }
 
 
-    // Save when typing
-    input.addEventListener("input", function() {
+        input.addEventListener("input", function() {
 
-        localStorage.setItem(
-            "planner-" + index,
-            input.value
-        );
+            localStorage.setItem(
+                "planner-" + index,
+                input.value
+            );
+
+        });
 
     });
+
+
+    let goalInput = document.querySelector(".goal-box input");
+
+
+    if (goalInput) {
+
+        let savedGoal = localStorage.getItem("weeklyGoal");
+
+        if (savedGoal) {
+            goalInput.value = savedGoal;
+        }
+
+
+        goalInput.addEventListener("input", function() {
+
+            localStorage.setItem(
+                "weeklyGoal",
+                goalInput.value
+            );
+
+        });
+
+    }
 
 });
-
-
-// Save weekly goal
-
-let goalInput = document.querySelector(".goal-box input");
-
-
-if (goalInput) {
-
-    let savedGoal = localStorage.getItem("weeklyGoal");
-
-    if (savedGoal) {
-        goalInput.value = savedGoal;
-    }
-
-
-    goalInput.addEventListener("input", function() {
-
-        localStorage.setItem(
-            "weeklyGoal",
-            goalInput.value
-        );
-
-    });
-
-}
